@@ -1,0 +1,81 @@
+{
+  "version": 2,
+  "configurePresets": [
+    {
+      "name": "base",
+      "displayName": "Windows x86-64 base",
+      "description": "Build x86-64 Release, VS2019",
+      "hidden": true,
+      "generator": "Visual Studio 16 2019",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "cacheVariables": {
+        "BUILD_SHARED_LIBS": "YES"
+      }
+    },
+    {
+      "name": "Debug",
+      "displayName": "Windows x86-64 Debug",
+      "description": "Build x86-64 Debug, VS2019",
+      "inherits": "base",
+      "binaryDir": "${sourceDir}/Debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "DebugAll",
+      "displayName": "Windows x86-64 Debug All",
+      "description": "Build x86-64 Debug, VS2019, including test and samples",
+      "inherits": "Debug",
+      "cacheVariables": {
+        "BUILD_TEST": "YES",
+        "BUILD_SAMPLES": "YES"
+      }
+    },
+    {
+      "name": "Release",
+      "displayName": "Windows x86-64 Release",
+      "description": "Build x86-64 Release, VS2019",
+      "inherits": "base",
+      "binaryDir": "${sourceDir}/Release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "ReleaseAll",
+      "displayName": "Windows x86-64 Release All",
+      "description": "Build x86-64 Release, VS2019, including test and samples",
+      "inherits": "Release",
+      "cacheVariables": {
+        "BUILD_TEST": "YES",
+        "BUILD_SAMPLES": "YES"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug",
+      "configurePreset": "Debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "DebugAll",
+      "configurePreset": "DebugAll",
+      "configuration": "Debug"
+    },
+    {
+      "name": "Release",
+      "configurePreset": "Release",
+      "configuration": "Release"
+    },
+    {
+      "name": "ReleaseAll",
+      "configurePreset": "ReleaseAll",
+      "configuration": "Release"
+    }
+  ]
+}
