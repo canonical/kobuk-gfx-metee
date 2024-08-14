@@ -1,0 +1,12 @@
+Avoid redefining _FORTIFY_SOURCE as =2, as Debian already build with =3
+--- a/linux.cmake
++++ b/linux.cmake
+@@ -55,7 +55,7 @@
+ # Security options
+ target_compile_options(
+   ${PROJECT_NAME}
+-  PRIVATE -fstack-protector-strong -D_FORTIFY_SOURCE=2 -O2 -Wformat
++  PRIVATE -fstack-protector-strong -O2 -Wformat
+           -Wformat-security
+   PRIVATE $<$<C_COMPILER_ID:GNU>:-fno-strict-overflow>
+   PRIVATE $<$<C_COMPILER_ID:GNU>:-fno-delete-null-pointer-checks>
