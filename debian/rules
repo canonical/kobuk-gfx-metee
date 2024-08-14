@@ -1,5 +1,7 @@
 #!/usr/bin/make -f
 
+export DEB_CPPFLAGS_MAINT_STRIP = -D_FORTIFY_SOURCE=3
+
 %:
 	dh $@ --buildsystem=cmake
 
