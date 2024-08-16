@@ -1,17 +1,5 @@
-metee (4.1.0-0ubuntu1~ppa3) oracular; urgency=medium
-
-  * Fix dependencies.
-
- -- Pedro Kopper <pedro.kopper@canonical.com>  Wed, 14 Aug 2024 16:10:46 -0300
-
-metee (4.1.0-0ubuntu1~ppa2) oracular; urgency=medium
-
-  * Cleanup comments and extra directories.
-
- -- Pedro Kopper <pedro.kopper@canonical.com>  Wed, 14 Aug 2024 15:50:43 -0300
-
-metee (4.1.0-0ubuntu1~ppa1) oracular; urgency=medium
+metee (4.1.0-0ubuntu1~ppa1) noble; urgency=medium
 
   * Initial release.
 
- -- Pedro Kopper <pedro.kopper@canonical.com>  Wed, 14 Aug 2024 15:27:24 -0300
+ -- Hector Cao <hector.cao@canonical.com>  Fri, 16 Aug 2024 06:29:00 +0200
