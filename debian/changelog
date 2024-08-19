@@ -13,5 +13,7 @@ metee (4.1.0-0ubuntu1~ppa2) oracular; urgency=medium
 metee (4.1.0-0ubuntu1~ppa1) oracular; urgency=medium
 
   * Initial release.
+  * Cleanup comments and extra directories.
+  * Fix dependencies.
 
  -- Pedro Kopper <pedro.kopper@canonical.com>  Wed, 14 Aug 2024 15:27:24 -0300
