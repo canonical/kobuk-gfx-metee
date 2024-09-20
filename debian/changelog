@@ -1,6 +1,8 @@
 metee (4.1.0-0ubuntu1~24.10~ppa2) oracular; urgency=medium
 
   * Removed metadata example file
+  * Enabled the BUILD_DOCS option
+  * Added lintian overrides - CMake-generated docs not easily fixable
 
  -- Shane McKee <shane.mckee@canonical.com>  Wed, 18 Sep 2024 18:54:04 +0800
 
