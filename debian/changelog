@@ -1,3 +1,21 @@
+metee (4.1.0-0ubuntu1~24.10~ppa5) oracular; urgency=medium
+
+  * Remove docs and man page installation to fix build issues 
+
+ -- Shane McKee <shane.mckee@canonical.com>  Mon, 30 Sep 2024 19:22:09 +0800
+
+metee (4.1.0-0ubuntu1~24.10~ppa4) oracular; urgency=medium
+
+  * Fix install file build errors
+
+ -- Shane McKee <shane.mckee@canonical.com>  Sat, 28 Sep 2024 01:22:39 +0800
+
+metee (4.1.0-0ubuntu1~24.10~ppa3) oracular; urgency=medium
+
+  * Fix dpkg build errors
+
+ -- Shane McKee <shane.mckee@canonical.com>  Sat, 28 Sep 2024 01:08:10 +0800
+
 metee (4.1.0-0ubuntu1~24.10~ppa2) oracular; urgency=medium
 
   * Removed metadata example file
