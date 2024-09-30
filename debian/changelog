@@ -1,3 +1,9 @@
+metee (4.2.1-0ubuntu1~24.10~ppa2) oracular; urgency=medium
+
+  * Cherry-pick Pavel's docs patch
+
+ -- Shane McKee <shane.mckee@canonical.com>  Tue, 01 Oct 2024 03:10:51 +0800
+
 metee (4.2.1-0ubuntu1~24.10~ppa1) oracular; urgency=medium
 
   * Version bump to 4.2.1
