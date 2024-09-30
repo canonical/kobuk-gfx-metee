@@ -1,3 +1,9 @@
+metee (4.1.0-0ubuntu1~24.10~ppa6) oracular; urgency=medium
+
+  * Build docs for metee when including correct deps 
+
+ -- piandro-mobl2 <pavel.androniychuk@intel.com>  Mon, 30 Sep 2024 09:01:32 -0700
+
 metee (4.1.0-0ubuntu1~24.10~ppa5) oracular; urgency=medium
 
   * Remove docs and man page installation to fix build issues 
