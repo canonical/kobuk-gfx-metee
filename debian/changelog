@@ -1,3 +1,9 @@
+metee (4.2.1-0ubuntu1~24.10~ppa1) oracular; urgency=medium
+
+  * Version bump to 4.2.1
+
+ -- Shane McKee <shane.mckee@canonical.com>  Tue, 01 Oct 2024 00:52:13 +0800
+
 metee (4.1.0-0ubuntu1~24.10~ppa5) oracular; urgency=medium
 
   * Remove docs and man page installation to fix build issues 
