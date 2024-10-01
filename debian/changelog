@@ -1,3 +1,9 @@
+metee (4.2.1-0ubuntu1~24.10~ppa3) oracular; urgency=medium
+
+  * Build native and not quilt 
+
+ -- piandro-mobl2 <pavel.androniychuk@intel.com>  Mon, 30 Sep 2024 16:30:43 -0700
+
 metee (4.2.1-0ubuntu1~24.10~ppa2) oracular; urgency=medium
 
   * Cherry-pick Pavel's docs patch
