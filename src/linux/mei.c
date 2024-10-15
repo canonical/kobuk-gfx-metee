@@ -27,10 +27,12 @@
 #include <cutils/log.h>
 #define mei_msg(_me, fmt, ARGS...) ALOGV_IF((_me->log_level >= MEI_LOG_LEVEL_VERBOSE), fmt, ##ARGS)
 #define mei_err(_me, fmt, ARGS...) ALOGE(fmt, ##ARGS)
+#ifdef DEBUG
 static inline void __dump_buffer(const char *buf)
 {
 	ALOGV("%s\n", buf);
 }
+#endif /* DEBUG */
 
 #else /* ! ANDROID */
 #ifdef SYSLOG
@@ -61,12 +63,15 @@ static inline void __dump_buffer(const char *buf)
 	}                                                                     \
 } while (0)
 
+#ifdef DEBUG
 static inline void __dump_buffer(const char *buf)
 {
 	__mei_msg("%s\n", buf);
 }
+#endif /* DEBUG */
 #endif /* ANDROID */
 
+#ifdef DEBUG
 static void dump_hex_buffer(const unsigned char *buf, size_t len)
 {
 #define LINE_LEN 16
@@ -91,6 +96,15 @@ static void mei_dump_hex_buffer(struct mei *me,
 
 	dump_hex_buffer(buf, len);
 }
+#else /* DEBUG */
+static void mei_dump_hex_buffer(struct mei *me,
+				const unsigned char *buf, size_t len)
+{
+	(void)(me);
+	(void)(buf);
+	(void)(len);
+}
+#endif /* DEBUG */
 
 void mei_deinit(struct mei *me)
 {
@@ -228,6 +242,7 @@ static inline int __mei_fwsts(struct mei *me, const char *device,
 	char line[FWSTS_LEN];
 	unsigned long cnv;
 	ssize_t len;
+	off_t count;
 
 	if (snprintf(path, FWSTS_FILENAME_LEN,
 		     "/sys/class/mei/%s/fw_status", device) < 0)
@@ -241,8 +256,10 @@ static inline int __mei_fwsts(struct mei *me, const char *device,
 		return -me->last_err;
 	}
 
+	/* safe to cast to off_t: fwsts_num is a small number */
+	count = (off_t)fwsts_num * FWSTS_LEN;
 	errno = 0;
-	len = pread(fd, line, FWSTS_LEN, fwsts_num * FWSTS_LEN);
+	len = pread(fd, line, FWSTS_LEN, count);
 	if (len == -1) {
 		me->last_err = errno;
 		close(fd);
@@ -375,6 +392,7 @@ static int __mei_fd_to_devname(struct mei *me, int fd)
 	char name[PATH_MAX];
 	char proc[PATH_MAX];
 	int ret;
+	ssize_t sret;
 
 	ret = snprintf(proc, PATH_MAX, "/proc/self/fd/%d", fd);
 	if (ret < 0) {
@@ -387,20 +405,20 @@ static int __mei_fd_to_devname(struct mei *me, int fd)
 	}
 
 	errno = 0;
-	ret = readlink(proc, name, PATH_MAX);
-	if (ret == -1) {
+	sret = readlink(proc, name, PATH_MAX);
+	if (sret == -1) {
 		mei_err(me, "Cannot obtain device name %d\n", errno);
 		return -errno;
 	}
-	if (ret == PATH_MAX) {
+	if (sret == PATH_MAX) {
 		mei_err(me, "Cannot obtain device name, too long\n");
 		return -ENAMETOOLONG;
 	}
-	if (ret < 0 || ret > PATH_MAX) {
-		mei_err(me, "Cannot obtain device name %d\n", ret);
+	if (sret < 0 || sret > PATH_MAX) {
+		mei_err(me, "Cannot obtain device name %zd\n", sret);
 		return -EFAULT;
 	}
-	name[ret] = '\0';
+	name[sret] = '\0';
 
 	me->device = strdup(name);
 	if (!me->device)

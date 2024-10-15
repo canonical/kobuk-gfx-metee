@@ -1,5 +1,55 @@
-metee (4.1.0-0ubuntu1~24.04~ppa1) noble; urgency=medium
+metee (4.2.1-0ubuntu1~24.04~ppa3) oracular; urgency=medium
+
+  * Build native and not quilt 
+
+ -- piandro-mobl2 <pavel.androniychuk@intel.com>  Mon, 30 Sep 2024 16:30:43 -0700
+
+metee (4.2.1-0ubuntu1~24.10~ppa2) oracular; urgency=medium
+
+  * Cherry-pick Pavel's docs patch
+
+ -- Shane McKee <shane.mckee@canonical.com>  Tue, 01 Oct 2024 03:10:51 +0800
+
+metee (4.2.1-0ubuntu1~24.10~ppa1) oracular; urgency=medium
+
+  * Version bump to 4.2.1
+
+ -- Shane McKee <shane.mckee@canonical.com>  Tue, 01 Oct 2024 00:52:13 +0800
+
+metee (4.1.0-0ubuntu1~24.10~ppa6) oracular; urgency=medium
+
+  * Build docs for metee when including correct deps 
+
+ -- piandro-mobl2 <pavel.androniychuk@intel.com>  Mon, 30 Sep 2024 09:01:32 -0700
+
+metee (4.1.0-0ubuntu1~24.10~ppa5) oracular; urgency=medium
+
+  * Remove docs and man page installation to fix build issues 
+
+ -- Shane McKee <shane.mckee@canonical.com>  Mon, 30 Sep 2024 19:22:09 +0800
+
+metee (4.1.0-0ubuntu1~24.10~ppa4) oracular; urgency=medium
+
+  * Fix install file build errors
+
+ -- Shane McKee <shane.mckee@canonical.com>  Sat, 28 Sep 2024 01:22:39 +0800
+
+metee (4.1.0-0ubuntu1~24.10~ppa3) oracular; urgency=medium
+
+  * Fix dpkg build errors
+
+ -- Shane McKee <shane.mckee@canonical.com>  Sat, 28 Sep 2024 01:08:10 +0800
+
+metee (4.1.0-0ubuntu1~24.10~ppa2) oracular; urgency=medium
+
+  * Removed metadata example file
+  * Enabled the BUILD_DOCS option
+  * Added lintian overrides - CMake-generated docs not easily fixable
+
+ -- Shane McKee <shane.mckee@canonical.com>  Wed, 18 Sep 2024 18:54:04 +0800
+
+metee (4.1.0-0ubuntu1~24.10~ppa1) oracular; urgency=medium
 
   * Initial release.
 
- -- Hector Cao <hector.cao@canonical.com>  Fri, 16 Aug 2024 06:29:00 +0200
+ -- Shane McKee <shane.mckee@canonical.com>  Fri, 06 Sep 2024 18:58:36 +0800
