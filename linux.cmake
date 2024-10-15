@@ -55,7 +55,7 @@ target_compile_options(
 # Security options
 target_compile_options(
   ${PROJECT_NAME}
-  PRIVATE -fstack-protector-strong -O2 -Wformat
+  PRIVATE -fstack-protector-strong -D_FORTIFY_SOURCE=2 -O2 -Wformat
           -Wformat-security
   PRIVATE $<$<C_COMPILER_ID:GNU>:-fno-strict-overflow>
   PRIVATE $<$<C_COMPILER_ID:GNU>:-fno-delete-null-pointer-checks>
