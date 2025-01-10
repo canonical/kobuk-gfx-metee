@@ -1,3 +1,9 @@
+metee (4.3.0-0ubuntu1~24.10~ppa1) oracular; urgency=medium
+
+  * Bump version to 4.3.0 
+
+ -- Pavel Androniychuk <pavel.androniychuk@intel.com>  Thu, 09 Jan 2025 15:20:36 -0800
+
 metee (4.2.1-0ubuntu1~24.10~ppa3) oracular; urgency=medium
 
   * Build native and not quilt 
